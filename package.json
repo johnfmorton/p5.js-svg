@@ -2,7 +2,7 @@
   "name": "p5.js-svg",
   "version": "1.5.2",
   "main": "dist/p5.svg.cjs.js",
-  "module": "dist/p5.svg.js",
+  "module": "dist/p5.svg.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "python3 -m http.server 3000",
