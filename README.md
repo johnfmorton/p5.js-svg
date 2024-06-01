@@ -4,6 +4,35 @@ The main goal of p5.SVG is to provide a SVG runtime for p5.js, so that we can
 draw using p5's powerful API in \<svg\>, save things to svg file and
 manipulating existing SVG file without rasterization.
 
+## Note about this fork, a fork of a fork.
+
+This fork is a temporary solution to fix the issue with the original package having an unmerged fix for a compatibility issue with p5.js versions 1.7 and beyond. I did not fix the incompatibility issue. The actual fix in the code is in this fork, [https://github.com/nkymut/p5.js-svg](https://github.com/nkymut/p5.js-svg). I have forked this fork.
+
+The original package can be found [here](https://github.com/zenozeng/p5.js-svg). At the time of writing this, the original package is at 1.5.1. This fork is at 1.5.2.
+
+### Why this fork of a fork?
+
+The forked version does address the compatibility issue, but the ES6 module import is not working.
+
+To address that, I've updated the rollup configuration to generate an ES6 module version of the package, dist/p5.svg.esm.js. This version can be imported as an ES6 module in a project. To allow this import, I've also updated the package.json file. The main field is now pointing to the CommonJS version of the package, and the module field is pointing to the ES6 module version.
+
+To install this version directly from GitHub, you can run the following command:
+
+```
+npm install johnfmorton/p5.js-svg#main
+```
+
+This will install the package from the main branch of this repository.
+
+This will allow you to import the package as an ES6 module in your project.
+
+```javascript
+import init, { p5SVG } from 'p5.js-svg'
+```
+You can reference my p5js svg starter project [here](https://github.com/johnfmorton/p5js-svg-starter) to see how I'm using it. The starter project is using the ES6 module import.
+
+### _The rest of the documentation is from the original package._
+
 ## Getting Started
 
 Add this line in your projects index.html :
